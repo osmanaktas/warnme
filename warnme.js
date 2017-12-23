@@ -1,5 +1,11 @@
 setTimeout(function () {
     var last = null, warnme = null, warnme_intv = null, marketname = location.href.replace(/.*MarketName=/, ""), socketstatus = false;
+    var fixnum = function(num){
+	if (typeof num != "number")
+		num = parseFloat(num);
+	num = num.toFixed(12);
+	return num.substr(0,num.indexOf(".") + 9);
+    }
     $(document).on('change', '.botalertmute', function () {
         if ($(this).is(":checked"))
             localStorage.setItem("warnme_alertmute", 1);
@@ -80,18 +86,22 @@ setTimeout(function () {
             but.attr("aktif", "0").val("Stopped").css("color", "red");
         }
     });
-
-    var botalertmute_checked = (localStorage.getItem("warnme_alertmute")) ? 'checked="checked"' : '';
+     
+    last = Number(document.title.match(/\((.*?)\)/i)[1]);
+    var botalertmute_checked = (localStorage.getItem("warnme_alertmute")) ? 'checked="checked"' : '',minval=fixnum(last-(last*0.05)),maxval=fixnum(last+(last*0.05));
 
     var html = '<table style="width:100%"><tr><td colspan="3" style="text-align:center">WARN ME v1</td></tr><tr>';
-    html += '<td>Min : <input style="width:70%" type="text" class="botmin" value="0" /></td>';
-    html += '<td>Max : <input style="width:70%" type="text" class="botmax" value="0" /></td>';
+    html += '<td>Min : <input style="width:70%" type="text" class="botmin" value="'+minval+'" /></td>';
+    html += '<td>Max : <input style="width:70%" type="text" class="botmax" value="'+maxval+'" /></td>';
     html += '<td style="width:70px"><input type="button" class="botbut" value="Stopped" aktif="0" style="color:red" /></td>';
     html += '</tr><tr><td colspan="3">&nbsp;</td></tr><tr><td colspan="2"><label><input type="checkbox" class="botalertmute" ' + botalertmute_checked + ' /> Alert sound muted</label> (<a href="javascript:;" onclick="var cal = new Audio(\'https://soundbible.com/mp3/fire-truck-air-horn_daniel-simion.mp3\'); cal.play();">Test alert sound</a>)</td><td style="text-align:right;width:100px;"><a target="_blank" href="https://github.com/osmanaktas/warnme">Source</a></td>';
     html += '</tr></table>';
     html = '<div class="col-md-12 hidden-sm hidden-xs" style="background: ghostwhite;"><div class="wrapper">' + html + '</div></div>';
 
     $('.market-stats').append(html);
+
+
+
 
     // Google GA 
 
