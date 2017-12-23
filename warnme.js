@@ -18,7 +18,7 @@ setTimeout(function (){
             } 
             setTimeout(function(){
                 alert(str);
-            },500);
+            },1000);
         }
         socketstatus=$('.fa-wifi').hasClass('socket-status-normal');
         if (!(min<last)) {
@@ -70,6 +70,7 @@ setTimeout(function (){
         }else{
             console.warn("Warnme :  stopped");
             clearInterval(warnme_intv);
+            $('.botmin, .botmax').attr("disabled",false);
             but.attr("aktif", "0").val("Stopped").css("color", "red");
         }
     });
