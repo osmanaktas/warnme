@@ -15,12 +15,14 @@ setTimeout(function () {
         var uyari = function (str) {
             if (!localStorage.getItem("warnme_alertmute")) {
                 var cal = new Audio("https://soundbible.com/mp3/fire-truck-air-horn_daniel-simion.mp3");
-                cal.play();
-            }
-            setTimeout(function () {
+                cal.addEventListener('canplaythrough', function () {
+                    cal.play();
+                    alert(str);
+                }, false);
+            } else
                 alert(str);
-            }, 1000);
         }
+        
         socketstatus = $('.fa-wifi').hasClass('socket-status-normal');
         if (!(min < last)) {
             alert("Min value is wrong. " + min + "<" + last);
@@ -90,11 +92,11 @@ setTimeout(function () {
     html = '<div class="col-md-12 hidden-sm hidden-xs" style="background: ghostwhite;"><div class="wrapper">' + html + '</div></div>';
 
     $('.market-stats').append(html);
-    
+
     // Google GA 
-    
-    var trackButtonClick=function (e) { // bunu simdilik kullanmıyoruz
-    _gaq.push(['_trackEvent', "event_id", 'clicked']); 
+
+    var trackButtonClick = function (e) { // bunu simdilik kullanmıyoruz
+        _gaq.push(['_trackEvent', "event_id", 'clicked']);
     }
 
     var _AnalyticsCode = 'UA-111551936-1';
