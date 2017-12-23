@@ -1,16 +1,19 @@
 {
-  "name": "Warn Me",
-  "version": "0.0.1",
-  "manifest_version": 2,
-  "description": "Bittrez price alert script",
-  "content_scripts": [ 
-{ "run_at" :"document_end",
-"matches": ["https://bittrex.com/*"],
-"js": ["jquery-3.1.1.min.js","warnme.js"]
-} ],
-  "permissions": [
-    "https://*/*",
-    "http://*/*",
-    "tabs"
-  ]
+    "name": "Warn Me",
+    "version": "1",
+    "author":"https://twitter.com/_o_s_i",
+    "manifest_version": 2,
+    "description": "Bittrez price alert script",
+    "content_scripts": [
+        {
+            "run_at": "document_end",
+            "matches": ["https://bittrex.com/*"],
+            "js": ["jquery-3.1.1.min.js", "warnme.js"]
+        }],
+    "permissions": [
+        "https://*/*",
+        "http://*/*",
+        "tabs"
+    ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }
