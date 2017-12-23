@@ -12,6 +12,14 @@ Installation:
 * Open the Bittrex.com web page and start using it
 
 
+If you want to donate:
+
+BTC:
+13cqsEmzhFic3to8LTQgyDmf8RM2egWDBA
+
+ETH:
+0xed7bc59b19cfb0e96523b1312c6f0a6c71a47574
+
 
 Screen Shoot:
 
