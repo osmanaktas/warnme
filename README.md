@@ -1,6 +1,8 @@
-# Chrome alert application for Bittrex. Current version: 1
+# Chrome alert application for Bittrex
 
 It's easy to trade when you're working on a computer.
+
+Current version: 1
 
 ### Installation:
 
