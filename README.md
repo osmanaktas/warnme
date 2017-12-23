@@ -1,7 +1,7 @@
 # Chrome alert application for Bittrex
 
-It's easy to trade when you're working on a computer.
-Enter trading limits, then minimize the window. Keep working.
+It's so easy to trade now, when you're busy.
+Enter trading limits, then minimize window. Keep working.
 
 Current version: 1
 
