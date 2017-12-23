@@ -2,7 +2,7 @@
 
 It's easy to trade when you're working on a computer.
 
-Installation:
+### Installation:
 
 * Download codes your PC
 * Run your Chrome browser
@@ -11,7 +11,7 @@ Installation:
 * Click to Load Unpack Extension button and select files in folder
 * Open the Bittrex.com web page and start using it
 
-Follow me on twitter : https://twitter.com/_o_s_i
+### Follow me on twitter : https://twitter.com/_o_s_i
 
 
 If you want to donate:
@@ -23,6 +23,6 @@ ETH:
 0xed7bc59b19cfb0e96523b1312c6f0a6c71a47574
 
 
-Screen Shoot:
+### Screen Shoot:
 
 ![Screenshot](ScreenShot.png)
