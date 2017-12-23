@@ -3,7 +3,7 @@
     "version": "1",
     "author":"https://twitter.com/_o_s_i",
     "manifest_version": 2,
-    "description": "Bittrez price alert script",
+    "description": "Bittrex price alert",
     "content_scripts": [
         {
             "run_at": "document_end",
