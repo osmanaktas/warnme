@@ -7,8 +7,8 @@ It's easy to trade when you're working on a computer.
 * Download codes your PC
 * Run your Chrome browser
 * Click on Window -> Extensions
-* Click on Developer mode to activate it
-* Click to Load Unpack Extension button and select folder
+* Click on "Developer mode" to activate it
+* Click to "Load Unpacked Extension" button and select folder
 * For example, wisit https://bittrex.com/Market/Index?MarketName=USDT-BTC and wait 10 seconds
 
 ### Follow me on twitter : https://twitter.com/_o_s_i
