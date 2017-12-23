@@ -7,7 +7,7 @@ Installation:
 * Download codes your PC
 * Run your Chrome browser
 * Click on Window -> Extensions
-* Developer mode seçeneğini aktif edin
+* Activate the Developer mode option
 * Click to Load Unpack Extension button and select files in folder
 * Open the Bittrex.com web page and start using it
 
