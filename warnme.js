@@ -93,7 +93,7 @@ setTimeout(function () {
     
     // Google GA 
     
-    var trackButtonClick=function (e) { // bunu simdilik kullanıyoruz
+    var trackButtonClick=function (e) { // bunu simdilik kullanmıyoruz
     _gaq.push(['_trackEvent', "event_id", 'clicked']); 
     }
 
