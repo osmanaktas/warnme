@@ -11,6 +11,8 @@ Installation:
 * Click to Load Unpack Extension button and select files in folder
 * Open the Bittrex.com web page and start using it
 
+Follow me on twitter : https://twitter.com/_o_s_i
+
 
 If you want to donate:
 
