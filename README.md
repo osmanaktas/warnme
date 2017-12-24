@@ -28,4 +28,4 @@ ETH:
 
 ### Screen Shoot:
 
-![Screenshot](ScreenShot.png)
+![Screenshot](screen_shoot.png)
