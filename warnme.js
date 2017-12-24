@@ -31,7 +31,7 @@ setTimeout(function (){
                 alert(str);
         }
         
-        socketstatus = $('.fa-wifi').hasClass('socket-status-normal');
+        socketstatus = $("span[data\-bind=text\\:socket\\.displayStatus]").text().match("= (Slow|Connected)$");
         if (!(min < last)) {
             alert("Min value is wrong. " + min + "<" + last);
             return;
@@ -68,8 +68,8 @@ setTimeout(function (){
                 if (!socketstatus) {
                     but.attr("aktif", "0").val("Stopped").css("color", "red");
                     $('.botmin, .botmax').attr("disabled", false);
-                    console.warn("Warnme :  connection error.");
                     uyari("Warnme : Connection error. Check internet connection");
+                    console.warn("Warnme :  connection error.");
                     clearInterval(warnme_intv);
                 }
                 if (min >= last || last >= max) {
