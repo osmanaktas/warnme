@@ -12,13 +12,10 @@ setTimeout(function (){
     }
 
     $(document).on('change', '.botalertmute', function () {
-        if ($(this).is(":checked")){
-            _gaq.push(['_trackEvent', 'alertmute', '1']);
+        if ($(this).is(":checked"))
             localStorage.setItem("warnme_alertmute", 1);
-        }else{
-            _gaq.push(['_trackEvent', 'alertmute', '0']);
+        else
             localStorage.removeItem("warnme_alertmute");
-        } 
     });
 
     $(document).on("click", ".botbut", function () {
@@ -60,7 +57,6 @@ setTimeout(function (){
         }
 
         if (but.attr("aktif") == "0") {
-            _gaq.push(['_trackEvent', 'startstop', 'started']);
             but.removeAttr("aktif").val("Running").css("color", "green");
             $('.botmin, .botmax').attr("disabled", true);
             console.warn("Warnme running -->  min:" + min + ", max:" + max);
@@ -89,7 +85,6 @@ setTimeout(function (){
                 console.warn("Warnme");
             }, 300);
         } else {
-            _gaq.push(['_trackEvent', 'startstop', 'stopped']);
             console.warn("Warnme :  stopped");
             clearInterval(warnme_intv);
             $('.botmin, .botmax').attr("disabled", false);
@@ -116,25 +111,5 @@ setTimeout(function (){
     })
 
 
-
-    // Google GA 
-
-    var _AnalyticsCode = 'UA-111551936-1';
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', _AnalyticsCode]);
-    _gaq.push(['_trackPageview']);
-    _gaq.push(['_trackEvent', "warnme", 'load']);
-
-    (function () {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = 'https://ssl.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
-
-   
 }, 10000);
 
