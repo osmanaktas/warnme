@@ -1,11 +1,14 @@
 setTimeout(function (){
     var version=1;
-    var last = null, warnme = null, warnme_intv = null, marketname = location.href.replace(/.*MarketName=/, ""), socketstatus = false;
+    var last = null, warnme = null, warnme_intv = null, marketname = location.href.replace(/.*MarketName=/, "");
     var fixnum = function(num){
 	if (typeof num != "number")
 		num = parseFloat(num);
 	num = num.toFixed(12);
 	return num.substr(0,num.indexOf(".") + 9);
+    }
+    var socketstatus=function(){
+        return $("span[data\-bind=text\\:socket\\.displayStatus]").text().match("= (Slow|Connected)$");
     }
 
     $(document).on('change', '.botalertmute', function () {
@@ -31,7 +34,7 @@ setTimeout(function (){
                 alert(str);
         }
         
-        socketstatus = $("span[data\-bind=text\\:socket\\.displayStatus]").text().match("= (Slow|Connected)$");
+        
         if (!(min < last)) {
             alert("Min value is wrong. " + min + "<" + last);
             return;
@@ -48,7 +51,7 @@ setTimeout(function (){
         }
 
 
-        if (!socketstatus) {
+        if (!socketstatus()) {
             alert("Connection error. Check internet connection");
             return;
         }
@@ -64,8 +67,8 @@ setTimeout(function (){
                     $('.botalertmute').prop("checked", true);
                 else
                     $('.botalertmute').prop("checked", false);
-                last = Number(document.title.match(/\((.*?)\)/i)[1]), msg = marketname + " : " + last, socketstatus = $('.fa-wifi').hasClass('socket-status-normal');
-                if (!socketstatus) {
+                last = Number(document.title.match(/\((.*?)\)/i)[1]), msg = marketname + " : " + last;
+                if (!socketstatus()) {
                     but.attr("aktif", "0").val("Stopped").css("color", "red");
                     $('.botmin, .botmax').attr("disabled", false);
                     uyari("Warnme : Connection error. Check internet connection");
